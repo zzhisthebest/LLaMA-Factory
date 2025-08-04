@@ -884,6 +884,26 @@ register_template(
     ),
 )
 
+# register_template(
+#     name="alpaca",
+#     format_user=StringFormatter(slots=["### Instruction:\n{{content}}\n\n### Response:\n"]),
+#     format_assistant=StringFormatter(slots=["{{content}}", {"eos_token"}, "\n\n"]),
+#     default_system=(
+#         "Below is an instruction that describes a task. Write a response that appropriately completes the request.\n\n"
+#     ),
+#     replace_jinja_template=True,
+# )
+
+register_template(
+    name="lean4Prover",
+    format_user=StringFormatter(slots=["Complete the following Lean 4 code with explanatory comments preceding each line of code:\n\n```lean4\n{{header}}\n{{formal_statement}}\n```"]),
+    format_assistant=StringFormatter(slots=["{{proof}}"]),
+    default_system=(
+        "You are an expert in Lean 4 theorem proving.\n"
+    ),
+    replace_jinja_template=True,
+)
+
 
 register_template(
     name="default",

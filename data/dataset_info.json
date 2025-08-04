@@ -1,4 +1,7 @@
 {
+  "FormalML": {
+    "file_name": "train_alpaca.json"
+  },
   "identity": {
     "file_name": "identity.json"
   },
